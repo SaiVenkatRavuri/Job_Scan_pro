@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Scanner Pro - Beat the ATS, Land Your Dream Job</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">📄</div>
+                <span class="brand-text">ATS Resume Scanner Pro</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="btn btn-primary new-scan-btn" id="newScanBtn" style="display: none;">New Scan</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Page -->
+        <div class="page" id="homePage">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Beat the ATS. Land Your Dream Job.</h1>
+                        <p class="hero-subtitle">Get instant feedback on your resume with AI-powered ATS analysis. Score 80+ and increase your interview chances by 3x.</p>
+                        <button class="btn btn-primary btn-lg hero-cta" onclick="document.getElementById('uploadSection').scrollIntoView({behavior: 'smooth'})">Analyze Resume Now</button>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="score-preview">
+                            <div class="score-circle">
+                                <span class="score-number">84</span>
+                                <span class="score-label">ATS Score</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section class="upload-section" id="uploadSection">
+                <div class="container">
+                    <h2 class="section-title">Analyze Your Resume</h2>
+                    <div class="upload-grid">
+                        <div class="upload-card">
+                            <h3 class="upload-title">📄 Resume Text (Recommended)</h3>
+                            <div class="resume-input-container">
+                                <textarea class="resume-textarea" id="resumeTextarea" placeholder="Paste your resume text here... (Copy all text from your PDF/Word document)"></textarea>
+                                <div class="char-counter" id="resumeCharCounter">0 characters</div>
+                                <div class="input-tip">💡 Tip: Open your resume PDF, select all text (Ctrl+A), copy (Ctrl+C), and paste here</div>
+                            </div>
+                        </div>
+                        
+                        <div class="upload-card">
+                            <h3 class="upload-title">📋 Job Description</h3>
+                            <div class="job-description-container">
+                                <textarea class="job-description" id="jobDescription" placeholder="Paste the complete job description here..."></textarea>
+                                <div class="char-counter" id="charCounter">0 characters</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="analyze-section">
+                        <button class="btn btn-outline example-btn" id="exampleBtn" style="margin-bottom: 1rem;">📄 Load Example Resume &amp; Job Description</button>
+                        <button class="btn btn-primary btn-xl analyze-btn" id="analyzeBtn" disabled>
+                            <span class="btn-text">Analyze My Resume Now</span>
+                            <div class="btn-loader" style="display: none;">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                        <p class="analyze-note">Please enter at least 100 characters in each field</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features" id="features">
+                <div class="container">
+                    <h2 class="section-title">Powerful Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3 class="feature-title">Instant ATS Score</h3>
+                            <p class="feature-description">Get a comprehensive 0-100 score in seconds with detailed breakdown</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔑</div>
+                            <h3 class="feature-title">Keyword Matching</h3>
+                            <p class="feature-description">See exactly which keywords are working and what's missing</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🤖</div>
+                            <h3 class="feature-title">Smart Suggestions</h3>
+                            <p class="feature-description">AI-powered optimization tips to improve your resume</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">✅</div>
+                            <h3 class="feature-title">ATS-Friendly Tips</h3>
+                            <p class="feature-description">Format and structure guidance for better parsing</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works" id="how-it-works">
+                <div class="container">
+                    <h2 class="section-title">How It Works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h3 class="step-title">Upload Resume &amp; Job Description</h3>
+                            <p class="step-description">Upload your resume and paste the target job description</p>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h3 class="step-title">AI Analyzes &amp; Compares</h3>
+                            <p class="step-description">Our AI engine analyzes and compares your content</p>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h3 class="step-title">Get Detailed Score &amp; Feedback</h3>
+                            <p class="step-description">Receive comprehensive scoring and improvement suggestions</p>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <h3 class="step-title">Optimize &amp; Apply with Confidence</h3>
+                            <p class="step-description">Implement changes and apply with confidence</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Results Page -->
+        <div class="page" id="resultsPage" style="display: none;">
+            <!-- Loading Overlay -->
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-content">
+                    <div class="loading-spinner"></div>
+                    <h3 class="loading-title">Analyzing Your Resume</h3>
+                    <p class="loading-step" id="loadingStep">Parsing resume content...</p>
+                    <div class="loading-progress">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Section -->
+            <section class="score-section">
+                <div class="container">
+                    <div class="score-header">
+                        <div class="score-main">
+                            <div class="score-gauge" id="scoreGauge">
+                                <svg class="gauge-svg" viewBox="0 0 200 200">
+                                    <circle class="gauge-bg" cx="100" cy="100" r="80"></circle>
+                                    <circle class="gauge-fill" id="gaugeFill" cx="100" cy="100" r="80"></circle>
+                                </svg>
+                                <div class="gauge-content">
+                                    <span class="gauge-score" id="gaugeScore">0</span>
+                                    <span class="gauge-label">ATS Score</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="score-details">
+                            <div class="score-status" id="scoreStatus">
+                                <span class="status-badge" id="statusBadge">Excellent Match</span>
+                                <h3 class="score-title">Strong Resume-Job Fit</h3>
+                            </div>
+                            <div class="match-stats">
+                                <div class="stat">
+                                    <span class="stat-value" id="keywordMatch">16/20</span>
+                                    <span class="stat-label">Keywords Matched</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value" id="skillsMatch">8/10</span>
+                                    <span class="stat-label">Skills Aligned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Area -->
+            <section class="results-content">
+                <div class="container">
+                    <div class="results-grid">
+                        <!-- Resume Preview Panel -->
+                        <div class="resume-panel">
+                            <div class="panel-header">
+                                <h3 class="panel-title">📄 Resume Preview</h3>
+                                <button class="btn btn-sm btn-outline">View Original</button>
+                            </div>
+                            <div class="resume-content" id="resumeContent">
+                                <!-- Resume content with highlighted keywords will be inserted here -->
+                            </div>
+                        </div>
+
+                        <!-- Analysis Panel -->
+                        <div class="analysis-panel">
+                            <div class="panel-tabs">
+                                <button class="tab-btn active" data-tab="breakdown">Score Breakdown</button>
+                                <button class="tab-btn" data-tab="matched">Matched Keywords</button>
+                                <button class="tab-btn" data-tab="missing">Missing Keywords</button>
+                                <button class="tab-btn" data-tab="feedback">Detailed Feedback</button>
+                            </div>
+
+                            <div class="tab-content">
+                                <!-- Score Breakdown Tab -->
+                                <div class="tab-pane active" id="breakdown">
+                                    <h4 class="tab-title">Score Breakdown</h4>
+                                    <div class="score-bars">
+                                        <div class="score-bar">
+                                            <div class="bar-info">
+                                                <span class="bar-label">Keyword Match</span>
+                                                <span class="bar-score" id="keywordScore">25/35</span>
+                                            </div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill" style="width: 71%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="score-bar">
+                                            <div class="bar-info">
+                                                <span class="bar-label">Skills Relevance</span>
+                                                <span class="bar-score" id="skillsScore">20/25</span>
+                                            </div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill" style="width: 80%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="score-bar">
+                                            <div class="bar-info">
+                                                <span class="bar-label">Experience Match</span>
+                                                <span class="bar-score" id="experienceScore">20/20</span>
+                                            </div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="score-bar">
+                                            <div class="bar-info">
+                                                <span class="bar-label">Formatting</span>
+                                                <span class="bar-score" id="formatScore">9/10</span>
+                                            </div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill" style="width: 90%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="score-bar">
+                                            <div class="bar-info">
+                                                <span class="bar-label">Education</span>
+                                                <span class="bar-score" id="educationScore">10/10</span>
+                                            </div>
+                                            <div class="bar-track">
+                                                <div class="bar-fill" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Matched Keywords Tab -->
+                                <div class="tab-pane" id="matched">
+                                    <h4 class="tab-title">Matched Keywords <span class="keyword-count" id="matchedCount">(16 found)</span></h4>
+                                    <div class="keyword-categories">
+                                        <div class="keyword-category">
+                                            <h5 class="category-title">Technical Skills</h5>
+                                            <div class="keyword-tags" id="matchedTechnical"></div>
+                                        </div>
+                                        <div class="keyword-category">
+                                            <h5 class="category-title">Tools &amp; Technologies</h5>
+                                            <div class="keyword-tags" id="matchedTools"></div>
+                                        </div>
+                                        <div class="keyword-category">
+                                            <h5 class="category-title">Soft Skills</h5>
+                                            <div class="keyword-tags" id="matchedSoft"></div>
+                                        </div>
+                                        <div class="keyword-category">
+                                            <h5 class="category-title">Certifications</h5>
+                                            <div class="keyword-tags" id="matchedCerts"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Missing Keywords Tab -->
+                                <div class="tab-pane" id="missing">
+                                    <h4 class="tab-title">Missing Keywords <span class="keyword-count" id="missingCount">(7 missing)</span></h4>
+                                    <div class="missing-keywords">
+                                        <div class="missing-category">
+                                            <h5 class="category-title high-priority">🔴 High Priority</h5>
+                                            <div class="keyword-tags" id="missingHigh"></div>
+                                        </div>
+                                        <div class="missing-category">
+                                            <h5 class="category-title medium-priority">🟡 Medium Priority</h5>
+                                            <div class="keyword-tags" id="missingMedium"></div>
+                                        </div>
+                                        <div class="missing-category">
+                                            <h5 class="category-title low-priority">🟢 Low Priority</h5>
+                                            <div class="keyword-tags" id="missingLow"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Detailed Feedback Tab -->
+                                <div class="tab-pane" id="feedback">
+                                    <h4 class="tab-title">Detailed Feedback</h4>
+                                    <div class="feedback-sections" id="feedbackSections"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Optimized Summary Section -->
+                    <div class="optimized-summary">
+                        <div class="summary-card">
+                            <h3 class="summary-title">🤖 AI-Generated Resume Summary</h3>
+                            <div class="summary-content" id="summaryContent"></div>
+                            <div class="summary-actions">
+                                <button class="btn btn-outline copy-btn" id="copyBtn">
+                                    <span class="copy-text">📋 Copy to Clipboard</span>
+                                    <span class="copy-success" style="display: none;">✅ Copied!</span>
+                                </button>
+                                <div class="char-count" id="summaryCharCount">0 characters</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary btn-lg download-btn" id="downloadBtn">
+                            📄 Download Full Report (PDF)
+                        </button>
+                        <button class="btn btn-outline btn-lg" id="newAnalysisBtn">
+                            🔄 Analyze Another Resume
+                        </button>
+                        <button class="btn btn-outline btn-lg share-btn" id="shareBtn">
+                            📤 Share Results
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-brand">
+                        <span class="footer-logo">📄</span>
+                        <span class="footer-text">ATS Resume Scanner Pro</span>
+                    </div>
+                    <p class="footer-description">Empowering job seekers with AI-powered resume optimization</p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank">🐦</a>
+                        <a href="#" class="social-link" target="_blank">💼</a>
+                        <a href="#" class="social-link" target="_blank">📧</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ATS Resume Scanner Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Download/Share -->
+    <div class="modal" id="modal" style="display: none;">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Coming Soon</h3>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">This feature is coming soon! Stay tuned for updates.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modalOk">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" style="display: none;">
+        <div class="toast-content">
+            <span class="toast-icon" id="toastIcon">✅</span>
+            <span class="toast-message" id="toastMessage">Success!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
